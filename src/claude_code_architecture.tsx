@@ -49,10 +49,14 @@ const ClaudeCodeArchitecture = () => {
             
             <div className="grid grid-cols-2 gap-4">
               {/* 主循环 */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border-2 border-purple-200">
+              <div
+                className="bg-white p-4 rounded-lg shadow-sm border-2 border-purple-200 cursor-pointer hover:bg-purple-50 hover:border-purple-400 transition-all group"
+                onClick={() => navigate('/main-loop')}
+              >
                 <h3 className="font-semibold text-purple-700 mb-2 flex items-center gap-2">
                   <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
                   主循环 "nO"
+                  <ExternalLink className="text-purple-400 group-hover:text-purple-600 ml-auto" size={14} />
                 </h3>
                 <div className="text-xs space-y-1 font-mono bg-slate-50 p-2 rounded">
                   <div className="text-purple-600">while (有工具调用):</div>
@@ -70,8 +74,14 @@ const ClaudeCodeArchitecture = () => {
               </div>
 
               {/* 实时引导 */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border-2 border-purple-200">
-                <h3 className="font-semibold text-purple-700 mb-2">实时引导 "h2A"</h3>
+              <div
+                className="bg-white p-4 rounded-lg shadow-sm border-2 border-purple-200 cursor-pointer hover:bg-purple-50 hover:border-purple-400 transition-all group"
+                onClick={() => navigate('/realtime-guidance')}
+              >
+                <h3 className="font-semibold text-purple-700 mb-2 flex items-center justify-between">
+                  <span>实时引导 "h2A"</span>
+                  <ExternalLink className="text-purple-400 group-hover:text-purple-600" size={14} />
+                </h3>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-orange-400 rounded-full"></div>
@@ -91,12 +101,24 @@ const ClaudeCodeArchitecture = () => {
 
             {/* StreamGen 和调度器 */}
             <div className="grid grid-cols-2 gap-4 mt-4">
-              <div className="bg-purple-100 p-3 rounded text-sm">
-                <p className="font-semibold text-purple-800">StreamGen</p>
+              <div
+                className="bg-purple-100 p-3 rounded text-sm cursor-pointer hover:bg-purple-200 transition-all group"
+                onClick={() => navigate('/stream-gen')}
+              >
+                <div className="flex items-center justify-between">
+                  <p className="font-semibold text-purple-800">StreamGen</p>
+                  <ExternalLink className="text-purple-400 group-hover:text-purple-600" size={14} />
+                </div>
                 <p className="text-xs text-slate-600">流式输出生成器</p>
               </div>
-              <div className="bg-purple-100 p-3 rounded text-sm">
-                <p className="font-semibold text-purple-800">ToolEngine & Scheduler</p>
+              <div
+                className="bg-purple-100 p-3 rounded text-sm cursor-pointer hover:bg-purple-200 transition-all group"
+                onClick={() => navigate('/tool-scheduler')}
+              >
+                <div className="flex items-center justify-between">
+                  <p className="font-semibold text-purple-800">ToolEngine & Scheduler</p>
+                  <ExternalLink className="text-purple-400 group-hover:text-purple-600" size={14} />
+                </div>
                 <p className="text-xs text-slate-600">工具编排与查询调度</p>
               </div>
             </div>
@@ -106,10 +128,14 @@ const ClaudeCodeArchitecture = () => {
         {/* 上下文管理 + 工具层 */}
         <div className="grid grid-cols-2 gap-6 mb-6">
           {/* 上下文管理 */}
-          <div className="bg-green-50 border-2 border-green-300 rounded-lg p-4">
+          <div
+            className="bg-green-50 border-2 border-green-300 rounded-lg p-4 cursor-pointer hover:bg-green-100 hover:border-green-400 transition-all group"
+            onClick={() => navigate('/context-management')}
+          >
             <div className="flex items-center gap-2 mb-3">
               <Database className="text-green-600" size={20} />
               <h2 className="text-lg font-semibold text-green-800">上下文管理</h2>
+              <ExternalLink className="text-green-400 group-hover:text-green-600 ml-auto" size={16} />
             </div>
             
             <div className="bg-white p-3 rounded shadow-sm mb-3">
@@ -170,10 +196,14 @@ const ClaudeCodeArchitecture = () => {
         {/* 规划与安全层 */}
         <div className="grid grid-cols-2 gap-6 mb-6">
           {/* 规划系统 */}
-          <div className="bg-indigo-50 border-2 border-indigo-300 rounded-lg p-4">
+          <div
+            className="bg-indigo-50 border-2 border-indigo-300 rounded-lg p-4 cursor-pointer hover:bg-indigo-100 hover:border-indigo-400 transition-all group"
+            onClick={() => navigate('/planning-parallel')}
+          >
             <div className="flex items-center gap-2 mb-3">
               <CheckSquare className="text-indigo-600" size={20} />
               <h2 className="text-lg font-semibold text-indigo-800">规划与并行</h2>
+              <ExternalLink className="text-indigo-400 group-hover:text-indigo-600 ml-auto" size={16} />
             </div>
             
             <div className="bg-white p-3 rounded shadow-sm mb-3">
@@ -202,10 +232,14 @@ const ClaudeCodeArchitecture = () => {
           </div>
 
           {/* 安全系统 */}
-          <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4">
+          <div
+            className="bg-red-50 border-2 border-red-300 rounded-lg p-4 cursor-pointer hover:bg-red-100 hover:border-red-400 transition-all group"
+            onClick={() => navigate('/security-risk')}
+          >
             <div className="flex items-center gap-2 mb-3">
               <Shield className="text-red-600" size={20} />
               <h2 className="text-lg font-semibold text-red-800">安全与风险管理</h2>
+              <ExternalLink className="text-red-400 group-hover:text-red-600 ml-auto" size={16} />
             </div>
             
             <div className="space-y-2">
